@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +120,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_root')
+]
+# VIEW_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+if DEBUG:
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_anPbqAP1CwVWOkrm5htWEjea'
+    STRIPE_SECRETE_KEY = 'sk_test_6XnSX6OoD7lmZ8zii5eN8Udx'
+else:
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_anPbqAP1CwVWOkrm5htWEjea'
+    STRIPE_SECRETE_KEY = 'sk_test_6XnSX6OoD7lmZ8zii5eN8Udx'
