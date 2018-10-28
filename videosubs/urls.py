@@ -5,7 +5,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('courses.urls')),
+    url(r'^membership/', include('accounts.urls')),
+    url(r'^courses/', include('courses.urls')),
 ]
 
 if settings.DEBUG:

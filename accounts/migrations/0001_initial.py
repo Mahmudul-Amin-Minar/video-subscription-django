@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('stripe_customer_id', models.CharField(max_length=40)),
-                ('membership', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='accounts.Membership')),
+                ('accounts', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='accounts.Membership')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
